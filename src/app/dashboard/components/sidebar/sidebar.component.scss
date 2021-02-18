@@ -1,0 +1,10 @@
+::ng-deep .sidebar-menu {
+  height: 100%;
+}
+
+::ng-deep .p-menuitem-link-active {
+  background-color: #e9ecef;
+  span {
+    font-weight: bold !important;
+  }
+}

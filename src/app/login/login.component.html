@@ -1,0 +1,45 @@
+<div class="login-container">
+  <form class="p-fluid login-form" [formGroup]="loginForm">
+    <div class="p-field">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        pInputText
+        formControlName="email"
+        required
+      />
+      <small
+        *ngIf="submitted && email?.errors && email?.errors?.email"
+        class="p-error"
+        >Please enter a valid email.</small
+      >
+      <small
+        *ngIf="submitted && email?.errors && email?.errors?.required"
+        class="p-error"
+        >Email is required.</small
+      >
+      <small
+        *ngIf="submitted && email?.errors && email?.errors?.match"
+        class="p-error"
+        >Email or password incorrect. Please try again</small
+      >
+    </div>
+    <div class="p-field">
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        pInputText
+        formControlName="password"
+        required
+      />
+      <small
+        *ngIf="submitted && password?.errors && password?.errors?.required"
+        class="p-error"
+        >Password is required.</small
+      >
+    </div>
+    <button (click)="onSubmit()" pButton type="submit" label="Login"></button>
+  </form>
+</div>

@@ -1,0 +1,1230 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [
+        {
+            "name": "AppPage",
+            "id": "class-AppPage-ee2067dfb1c303f41003aea7d82d51e0",
+            "file": "e2e/src/app.po.ts",
+            "type": "class",
+            "sourceCode": "import { browser, by, element } from 'protractor';\n\nexport class AppPage {\n  async navigateTo(): Promise<unknown> {\n    return browser.get(browser.baseUrl);\n  }\n\n  async getTitleText(): Promise<string> {\n    return element(by.css('app-root .content span')).getText();\n  }\n}\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getTitleText",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<string>",
+                    "typeParameters": [],
+                    "line": 8,
+                    "modifierKind": [
+                        120
+                    ]
+                },
+                {
+                    "name": "navigateTo",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Promise<unknown>",
+                    "typeParameters": [],
+                    "line": 4,
+                    "modifierKind": [
+                        120
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "GenericListItem",
+            "id": "class-GenericListItem-79097e2a497bfe6c5fad60c27ea9da06",
+            "file": "src/app/dashboard/models.ts",
+            "type": "class",
+            "sourceCode": "export class GenericListItem {\r\n  id: number;\r\n  value: string;\r\n  constructor() {\r\n    this.id = 0;\r\n    this.value = '';\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 3
+            },
+            "properties": [
+                {
+                    "name": "id",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "value",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-85af2c1aa19d221e3ba7053f7c4fb794",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'workshore-dashboard'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'workshore-dashboard';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>"
+        },
+        {
+            "name": "BarChartComponent",
+            "id": "component-BarChartComponent-f9fc0ff33726800aa716b080dfb5fa39",
+            "file": "src/app/dashboard/components/bar-chart/bar-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-bar-chart",
+            "styleUrls": [
+                "./bar-chart.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./bar-chart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "data",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-bar-chart',\n  templateUrl: './bar-chart.component.html',\n  styleUrls: ['./bar-chart.component.scss'],\n})\nexport class BarChartComponent implements OnInit {\n  data: any;\n  constructor() {\n    this.data = {\n      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\n      datasets: [\n        {\n          label: 'My First dataset',\n          backgroundColor: '#42A5F5',\n          borderColor: '#1E88E5',\n          data: [65, 59, 80, 81, 56, 55, 40],\n        },\n        {\n          label: 'My Second dataset',\n          backgroundColor: '#9CCC65',\n          borderColor: '#7CB342',\n          data: [28, 48, 40, 19, 86, 27, 90],\n        },\n      ],\n    };\n  }\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./bar-chart.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p-chart type=\"bar\" [data]=\"data\"></p-chart>\n"
+        },
+        {
+            "name": "ChartComponent",
+            "id": "component-ChartComponent-896bf1867e023f60c136f3efdd697569",
+            "file": "src/app/dashboard/components/chart/chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-chart",
+            "styleUrls": [
+                "./chart.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chart.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "barData",
+                    "line": 10,
+                    "type": "any"
+                },
+                {
+                    "name": "chartType",
+                    "defaultValue": "'bar'",
+                    "line": 9,
+                    "type": "\"bar\" | \"pie\""
+                },
+                {
+                    "name": "pieData",
+                    "line": 11,
+                    "type": "any"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-chart',\n  templateUrl: './chart.component.html',\n  styleUrls: ['./chart.component.scss'],\n})\nexport class ChartComponent implements OnInit {\n  @Input() chartType: 'bar' | 'pie' = 'bar';\n  @Input() barData: any;\n  @Input() pieData: any;\n  constructor() {}\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chart.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<p-chart\n  [type]=\"chartType\"\n  [data]=\"chartType == 'bar' ? barData : pieData\"\n></p-chart>\n"
+        },
+        {
+            "name": "ChartsComponent",
+            "id": "component-ChartsComponent-76c57b12dc89ec32fd418176936e9bd0",
+            "file": "src/app/dashboard/pages/charts/charts.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-charts",
+            "styleUrls": [
+                "./charts.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./charts.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "barData",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                },
+                {
+                    "name": "pieData",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-charts',\n  templateUrl: './charts.component.html',\n  styleUrls: ['./charts.component.scss'],\n})\nexport class ChartsComponent implements OnInit {\n  barData: any;\n  pieData: any;\n  constructor() {}\n\n  ngOnInit(): void {\n    this.barData = {\n      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],\n      datasets: [\n        {\n          label: 'My First dataset',\n          backgroundColor: '#42A5F5',\n          borderColor: '#1E88E5',\n          data: [65, 59, 80, 81, 56, 55, 40],\n        },\n        {\n          label: 'My Second dataset',\n          backgroundColor: '#9CCC65',\n          borderColor: '#7CB342',\n          data: [28, 48, 40, 19, 86, 27, 90],\n        },\n      ],\n    };\n    this.pieData = {\n      labels: ['A', 'B', 'C'],\n      datasets: [\n        {\n          data: [300, 50, 100],\n          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],\n          hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],\n        },\n      ],\n    };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".charts {\r\n  padding: 20px;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.chart-container {\r\n  display: flex;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.chart {\r\n  flex: 1 auto;\r\n}\r\n",
+                    "styleUrl": "./charts.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 10
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"charts\">\n  <div class=\"chart-container\">\n    <app-chart class=\"chart\" chartType=\"bar\" [barData]=\"barData\"></app-chart>\n    <app-chart class=\"chart\" chartType=\"pie\" [pieData]=\"pieData\"></app-chart>\n  </div>\n</div>\n"
+        },
+        {
+            "name": "DashboardComponent",
+            "id": "component-DashboardComponent-88f20b03750c1fa87c8273dfe445062f",
+            "file": "src/app/dashboard/dashboard.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dashboard",
+            "styleUrls": [
+                "./dashboard.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./dashboard.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "sidebarItems",
+                    "defaultValue": "[\n    {\n      label: 'Pages',\n      items: [\n        {\n          label: 'Charts',\n          icon: 'pi pi-fw pi-chart-bar',\n          routerLink: 'charts',\n        },\n        {\n          label: 'Listing',\n          icon: 'pi pi-fw pi-download',\n          routerLink: 'listing',\n        },\n      ],\n    },\n  ]",
+                    "type": "MenuItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\n@Component({\n  selector: 'app-dashboard',\n  templateUrl: './dashboard.component.html',\n  styleUrls: ['./dashboard.component.scss'],\n})\nexport class DashboardComponent implements OnInit {\n  sidebarItems: MenuItem[] = [\n    {\n      label: 'Pages',\n      items: [\n        {\n          label: 'Charts',\n          icon: 'pi pi-fw pi-chart-bar',\n          routerLink: 'charts',\n        },\n        {\n          label: 'Listing',\n          icon: 'pi pi-fw pi-download',\n          routerLink: 'listing',\n        },\n      ],\n    },\n  ];\n  constructor() {}\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".main-section {\r\n  height: calc(100vh - 65px);\r\n  width: 100%;\r\n  display: flex;\r\n}\r\n\r\naside {\r\n  height: 100%;\r\n}\r\n\r\n.content {\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-y: auto;\r\n}\r\n",
+                    "styleUrl": "./dashboard.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 26
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-navbar></app-navbar>\n<section class=\"main-section\">\n  <aside>\n    <app-sidebar [items]=\"sidebarItems\"></app-sidebar>\n  </aside>\n  <section class=\"content\">\n    <router-outlet></router-outlet>\n  </section>\n</section>\n"
+        },
+        {
+            "name": "ListingComponent",
+            "id": "component-ListingComponent-13f67e71eae59656d2129eae9046531a",
+            "file": "src/app/dashboard/components/listing/listing.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-listing",
+            "styleUrls": [
+                "./listing.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./listing.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "list",
+                    "defaultValue": "[\n    { id: 0, value: 'Item 1' },\n    { id: 1, value: 'Item 2' },\n    { id: 2, value: 'Item 3' },\n    { id: 3, value: 'Item 4' },\n    { id: 4, value: 'Item 5' },\n  ]",
+                    "line": 20,
+                    "type": "GenericListItem[]"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "searchTermChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "line": 19,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "dataRef",
+                    "type": "DataView | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'dv'"
+                        }
+                    ]
+                },
+                {
+                    "name": "searchTerm",
+                    "defaultValue": "''",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29
+                },
+                {
+                    "name": "onSearchTermChange",
+                    "args": [
+                        {
+                            "name": "text",
+                            "type": "any"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "jsdoctags": [
+                        {
+                            "name": "text",
+                            "type": "any",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  EventEmitter,\n  Input,\n  OnInit,\n  Output,\n  ViewChild,\n} from '@angular/core';\nimport { DataView } from 'primeng/dataview';\nimport { GenericListItem } from '../../models';\n\n@Component({\n  selector: 'app-listing',\n  templateUrl: './listing.component.html',\n  styleUrls: ['./listing.component.scss'],\n})\nexport class ListingComponent implements OnInit {\n  @ViewChild('dv') dataRef: DataView | undefined;\n  @Output() searchTermChange = new EventEmitter<string>();\n  @Input() list: GenericListItem[] = [\n    { id: 0, value: 'Item 1' },\n    { id: 1, value: 'Item 2' },\n    { id: 2, value: 'Item 3' },\n    { id: 3, value: 'Item 4' },\n    { id: 4, value: 'Item 5' },\n  ];\n  searchTerm = '';\n\n  ngOnInit() {}\n\n  onSearchTermChange(text: any) {\n    this.dataRef?.filter(text);\n    this.searchTermChange.emit(text);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".listing-container {\r\n  padding: 20px;\r\n}\r\n\r\n.data-view {\r\n}\r\n",
+                    "styleUrl": "./listing.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"listing-container\">\n  <p-dataView\n    #dv\n    [value]=\"list\"\n    filterBy=\"value\"\n    layout=\"list\"\n    styleClass=\"data-view\"\n  >\n    <ng-template pTemplate=\"header\">\n      <div class=\"p-d-flex p-flex-column p-flex-md-row p-jc-md-between\">\n        <span class=\"p-input-icon-left p-mb-2 p-mb-md-0\">\n          <i class=\"pi pi-search\"></i>\n          <input\n            type=\"search\"\n            pInputText\n            placeholder=\"Search by Name\"\n            [(ngModel)]=\"searchTerm\"\n            (ngModelChange)=\"onSearchTermChange($event)\"\n          />\n        </span>\n      </div>\n    </ng-template>\n    <ng-template let-item pTemplate=\"listItem\">\n      <div class=\"p-col-12\">\n        <p>{{ item.value }}</p>\n      </div>\n    </ng-template>\n  </p-dataView>\n</div>\n"
+        },
+        {
+            "name": "NavbarComponent",
+            "id": "component-NavbarComponent-04726b54ea4ec7a21d947b6bf27a2ba0",
+            "file": "src/app/dashboard/components/navbar/navbar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-navbar",
+            "styleUrls": [
+                "./navbar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./navbar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "logoImgSrc",
+                    "defaultValue": "'https://www.primefaces.org/primeng/showcase/assets/showcase/images/primeng-logo-dark.svg'",
+                    "line": 11
+                },
+                {
+                    "name": "signOutIcon",
+                    "defaultValue": "'pi-user'",
+                    "line": 10
+                },
+                {
+                    "name": "signOutText",
+                    "defaultValue": "'Signout'",
+                    "line": 9
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "signOut",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n\n@Component({\n  selector: 'app-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss'],\n})\nexport class NavbarComponent {\n  @Input() signOutText = 'Signout';\n  @Input() signOutIcon = 'pi-user';\n  @Input() logoImgSrc =\n    'https://www.primefaces.org/primeng/showcase/assets/showcase/images/primeng-logo-dark.svg';\n  @Output() signOut = new EventEmitter<boolean>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .p-menubar-button {\r\n  display: none !important;\r\n}\r\n\r\nimg {\r\n  max-height: 49px;\r\n}\r\n",
+                    "styleUrl": "./navbar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p-menubar>\n  <ng-template pTemplate=\"start\">\n    <img [src]=\"logoImgSrc\" alt=\"\" />\n  </ng-template>\n  <ng-template pTemplate=\"end\">\n    <button\n      pButton\n      pRipple\n      [label]=\"signOutText\"\n      type=\"button\"\n      icon=\"pi {{ signOutIcon }}\"\n      class=\"p-button-rounded p-button-info p-button-text\"\n      (click)=\"signOut.emit(true)\"\n    ></button>\n  </ng-template>\n</p-menubar>\n"
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-63d8326cc7170d90d2f741f6709e5f00",
+            "file": "src/app/dashboard/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [
+                "./sidebar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "line": 10,
+                    "type": "MenuItem[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { MenuItem } from 'primeng/api';\n\n@Component({\n  selector: 'app-sidebar',\n  templateUrl: './sidebar.component.html',\n  styleUrls: ['./sidebar.component.scss'],\n})\nexport class SidebarComponent {\n  @Input() items: MenuItem[] = [];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .sidebar-menu {\r\n  height: 100%;\r\n}\r\n\r\n::ng-deep .p-menuitem-link-active {\r\n  background-color: #e9ecef;\r\n  span {\r\n    font-weight: bold !important;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./sidebar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p-menu styleClass=\"sidebar-menu\" [model]=\"items\"></p-menu>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "ChartComponent"
+                        },
+                        {
+                            "name": "ChartsComponent"
+                        },
+                        {
+                            "name": "DashboardComponent"
+                        },
+                        {
+                            "name": "ListingComponent"
+                        },
+                        {
+                            "name": "NavbarComponent"
+                        },
+                        {
+                            "name": "SidebarComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "GeneralModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "GeneralModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Bar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Charts.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "Pie",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Charts.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Listing.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Sidebar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Navbar.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Listing.stories.ts",
+                "type": "Story<ListingComponent>",
+                "defaultValue": "(args: ListingComponent) => ({\r\n  component: ListingComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Charts.stories.ts",
+                "type": "Story<ChartComponent>",
+                "defaultValue": "(args: ChartComponent) => ({\r\n  component: ChartComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Sidebar.stories.ts",
+                "type": "Story<SidebarComponent>",
+                "defaultValue": "(args: SidebarComponent) => ({\r\n  component: SidebarComponent,\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Navbar.stories.ts",
+                "type": "Story<NavbarComponent>",
+                "defaultValue": "(args: NavbarComponent) => ({\r\n  component: NavbarComponent,\r\n  props: args,\r\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/stories/Charts.stories.ts": [
+                {
+                    "name": "Bar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Charts.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Pie",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Charts.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Charts.stories.ts",
+                    "type": "Story<ChartComponent>",
+                    "defaultValue": "(args: ChartComponent) => ({\r\n  component: ChartComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "type": "literal type"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/Listing.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Listing.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Listing.stories.ts",
+                    "type": "Story<ListingComponent>",
+                    "defaultValue": "(args: ListingComponent) => ({\r\n  component: ListingComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Sidebar.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Sidebar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Sidebar.stories.ts",
+                    "type": "Story<SidebarComponent>",
+                    "defaultValue": "(args: SidebarComponent) => ({\r\n  component: SidebarComponent,\r\n  props: args,\r\n})"
+                }
+            ],
+            "src/stories/Navbar.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Navbar.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Navbar.stories.ts",
+                    "type": "Story<NavbarComponent>",
+                    "defaultValue": "(args: NavbarComponent) => ({\r\n  component: NavbarComponent,\r\n  props: args,\r\n})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "",
+                        "redirectTo": "dashboard",
+                        "pathMatch": "full"
+                    },
+                    {
+                        "path": "dashboard",
+                        "component": "DashboardComponent",
+                        "children": [
+                            {
+                                "path": "charts",
+                                "component": "ChartsComponent"
+                            },
+                            {
+                                "path": "listing",
+                                "component": "ListingComponent"
+                            }
+                        ]
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "e2e/src/app.po.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AppPage",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/components/bar-chart/bar-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BarChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/components/chart/chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/components/listing/listing.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ListingComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/components/navbar/navbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/dashboard.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DashboardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/models.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "GenericListItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/dashboard/pages/charts/charts.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChartsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Charts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Bar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Charts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Pie",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Charts.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Listing.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Listing.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Navbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Sidebar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Sidebar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
